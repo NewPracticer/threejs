@@ -4,9 +4,11 @@ import router from './router'
 import './plugins/element.js'
 import Echarts from 'echarts'
 import 'element-ui/lib/theme-chalk/index.css'
+import VueECharts from 'vue-echarts'
 
 Vue.config.productionTip = false
 Vue.prototype.$echarts = Echarts
+Vue.component('v-chart',VueECharts)
 
 new Vue({
   router,
