@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	body, html,#map {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+  .anchorBL, .BMap_cpyCtrl {display: none; }
+  .BMap_stdMpZoom {
+    display: block;
+  }
+	</style>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=G1LFyjrNGIkns5OfpZnrCGAKxpycPLwb"></script>
+	<title>地图展示</title>
+</head>
+<body>
+	<div id="map"></div>
+  <script type="text/javascript">
+    var map = new BMapGL.Map('map', {
+      minZoom: 8,
+      maxZoom: 12,
+      mapType: BMAP_NORMAL_MAP
+    });
+    var point = new BMapGL.Point(116.404,39.915);
+    map.centerAndZoom(point, 10);
+    map.enableScrollWheelZoom(true);
+    var heading = 0;
+    map.setHeading(heading);
+    map.setTilt(70);
+    map.setMapType(BMAP_EARTH_MAP);
+    var zoomCtrl = new BMapGL.ZoomControl({
+      anchor: 'BMAP_ANCHOR_BOTTOM_LEFT',
+      offset: new BMapGL.Size(100, 0)
+    })
+    map.addControl(zoomCtrl)
+    
+    map.addEventListener('zoomstart', function(){
+      console.log(map.getZoom())
+    });
+    map.addEventListener('zoomend', function(){
+      console.log(map.getZoom())
+    });
+    var scaleCtrl = new BMapGL.ScaleControl({
+      anchor: BMAP_ANCHOR_TOP_LEFT,
+    })
+    map.addControl(scaleCtrl)
+    // setInterval(() => {
+    //   heading ++ ;
+    //   map.setHeading(heading)
+    // }, 500);
+  </script>
+</body>
+</html>
+

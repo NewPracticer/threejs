@@ -92,7 +92,9 @@ export default {
           textStyle: {
             fontSize: 12,
             color: '#666',
-          }
+          },
+          left: 25,
+          top: 20
         },
         xAxis: {
           type: 'category',
