@@ -41,8 +41,8 @@
           var startPoint = mapv.utilCityCenter.getCenterByCityName(citys[0]);
           var endPoint = mapv.utilCityCenter.getCenterByCityName(citys[parseInt(Math.random() * citys.length, 10)])
           curve.setOptions({
-					start: [startPoint.lng, startPoint.lat],
-					end: [endPoint.lng, endPoint.lat]
+				start: [startPoint.lng, startPoint.lat],
+				end: [endPoint.lng, endPoint.lat]
           });
           var curveModelData = curve.getPoints();
           data.push({
